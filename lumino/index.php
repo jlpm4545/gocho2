@@ -99,7 +99,7 @@
 			</div>
 		</form>
 		<ul class="nav menu">
-			<li class="active"><a href="index.html"><em class="fa fa-dashboard">&nbsp;</em>Inicio</a></li>
+			<li class="active"><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em>Inicio</a></li>
 			<li><a href="elements.php"><em class="fa fa-toggle-off">&nbsp;</em>Ingresos</a></li>
 			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
