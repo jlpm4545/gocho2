@@ -9,6 +9,9 @@
 	if(!$enlace){
 		echo"Error en la conexion con el servidor";
 	}
+
+	$cliente ="SELECT * FROM datos";
+	$resCliente=$enlace->query($cliente);
 ?>
 <!DOCTYPE html>
 <html>
@@ -146,47 +149,31 @@
 			<div class="col-lg-12">
 				<h1 class="page-header">Clientes</h1>
 			</div>
-		</div><!--/.row-->
-				<div class="panel panel-default">
-					<div class="panel-heading">Ingreso clientes</div>
-					<div class="panel-body">
-						<div class="col-md-6">
-							<form action="#" class="formulario" name="formulario" method="POST">
-								<div class="contenedor-inputs">
-									<label>Nombre del cliente</label>
-									<input class="form-control" type="text" name="nombre" placeholder="Nombre" >
-								</div><p></p><p></p>
-								<div type="text" name="numero" placeholder="Numero">
-									<label>Numero de telefono</label>
-									<input class="form-control" type="text" name="numero" placeholder="Numero" >
-								</div><p></p><p></p>
-								<div type="text" name="modelo" placeholder="Modelo">
-									<label>Modelo del equipo</label>
-									<input class="form-control" type="text" name="modelo" placeholder="Modelo" >
-								</div><p></p><p></p>
-								<div type="text" name="imei" placeholder="Imei">
-									<label>Imei del equipo</label>
-									<input class="form-control" type="text" name="imei" placeholder="Imei" >
-								</div><p></p><p></p>
-								<div class="form-group">
-									<label>Descricion de la falla</label>
-									<textarea class="form-control" rows="3"></textarea>
-								</div>
-								
+		
+			<section>
+			<table class="table">
+				<tr>
+					<th>nombre</th>
+					<th>numero</th>
+					<th>modelo</th>
+					<th>imei</th>
+				</tr>
+				<?php
 
+				while ($registroCliente = $resCliente->fetch_array(MYSQLI_BOTH)) 
+				{
+					echo '<tr>
+					<td>'.$registroCliente['nombre'].'</td>
+					<td>'.$registroCliente['numero'].'</td>
+					<td>'.$registroCliente['modelo'].'</td>
+					<td>'.$registroCliente['imei'].'</td>
+					</tr>';
+					
+				}
 
-									<button type="submit" class="btn btn-primary" name="registrarse" value="Registrate">GUARDAR</button>
-
-								</div>
-							</form>
-						</div>
-					</div>
-				</div><!-- /.panel-->
-			</div><!-- /.col-->
-			<div class="col-sm-12">
-				<p class="back-link">Pagina diseñada por <a href="https://www.medialoot.com">El webo mio</a></p>
-			</div>
-		</div><!-- /.row -->
+				?>
+			</table>
+			</section>
 	</div><!--/.main-->
 	
 <script src="js/jquery-1.11.1.min.js"></script>
