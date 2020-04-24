@@ -1,8 +1,8 @@
 <?php
-	$servidor="localhost";
-	$usuario="root";
-	$clave="";
-	$baseDeDatos="hola2";
+	$servidor="us-cdbr-iron-east-01.cleardb.net";
+	$usuario="b0edce8de34041";
+	$clave="0bd6a35b";
+	$baseDeDatos="heroku_0e547363b8bc7b0";
 
 	$enlace = mysqli_connect($servidor, $usuario, $clave, $baseDeDatos);
 
