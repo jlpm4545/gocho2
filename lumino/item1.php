@@ -9,6 +9,9 @@
 	if(!$enlace){
 		echo"Error en la conexion con el servidor";
 	}
+
+	$cliente ="SELECT * FROM datos";
+	$resCliente=$enlace->query($cliente);
 ?>
 <!DOCTYPE html>
 <html>
