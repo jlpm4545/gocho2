@@ -1,8 +1,8 @@
 <?php
-	$servidor="us-cdbr-iron-east-01.cleardb.net";
-	$usuario="b0edce8de34041";
-	$clave="0bd6a35b";
-	$baseDeDatos="heroku_0e547363b8bc7b0";
+	$servidor="localhost";
+	$usuario="root";
+	$clave="";
+	$baseDeDatos="hola2";
 
 	$enlace = mysqli_connect($servidor, $usuario, $clave, $baseDeDatos);
 
@@ -117,7 +117,7 @@
 				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="#">
+					<li><a class="" href="item1.php">
 						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1
 					</a></li>
 					<li><a class="" href="#">

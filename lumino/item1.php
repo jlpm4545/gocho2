@@ -1,14 +1,17 @@
 <?php
-	$servidor="us-cdbr-iron-east-01.cleardb.net";
-	$usuario="b0edce8de34041";
-	$clave="0bd6a35b";
-	$baseDeDatos="heroku_0e547363b8bc7b0";
+	$servidor="localhost";
+	$usuario="root";
+	$clave="";
+	$baseDeDatos="hola2";
 
 	$enlace = mysqli_connect($servidor, $usuario, $clave, $baseDeDatos);
 
 	if(!$enlace){
 		echo"Error en la conexion con el servidor";
 	}
+
+	$cliente ="SELECT * FROM datos";
+	$resCliente=$enlace->query($cliente);
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,6 +23,7 @@
 	<link href="css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/datepicker3.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	
 
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -112,12 +116,12 @@
 		</form>
 		<ul class="nav menu">
 			<li><a href="index.php"><em class="fa fa-dashboard">&nbsp;</em>Inicio</a></li>
-			<li class="active"><a href="elements.php"><em class="fa fa-toggle-off">&nbsp;</em>Ingresos</a></li>
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1">
+			<li class="parent"><a href="elements.php"><em class="fa fa-toggle-off">&nbsp;</em>Ingresos</a></li>
+			<li class="active "><a data-toggle="collapse" href="#sub-item-1">
 				<em class="fa fa-navicon">&nbsp;</em> Multilevel <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
 				</a>
 				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="#">
+					<li><a class="" href="item1.php">
 						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 1
 					</a></li>
 					<li><a class="" href="#">
@@ -142,19 +146,21 @@
 			</ol>
 		</div><!--/.row-->
 		
-		<div class="row">
+		<div class="table-responsive">
 			<div class="col-lg-12">
 				<h1 class="page-header">Clientes</h1>
 			</div>
 		
-			<section>
-			<table class="table">
+			
+			<table class="table table-striped table-bordered table-hover table-dark">
+				<thead>
 				<tr>
 					<th>nombre</th>
 					<th>numero</th>
 					<th>modelo</th>
 					<th>imei</th>
 				</tr>
+				</thead>
 				<?php
 
 				while ($registroCliente = $resCliente->fetch_array(MYSQLI_BOTH)) 
@@ -170,7 +176,6 @@
 
 				?>
 			</table>
-			</section>
 	</div><!--/.main-->
 	
 <script src="js/jquery-1.11.1.min.js"></script>
