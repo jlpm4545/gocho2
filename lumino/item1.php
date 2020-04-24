@@ -1,5 +1,5 @@
 <?php
-	$servidor="us-cdbr-iron-east-01.cleardb.net";
+	$servidor="ec2-3-92-30-85.compute-1.amazonaws.com";
 	$usuario="b0edce8de34041";
 	$clave="0bd6a35b";
 	$baseDeDatos="heroku_0e547363b8bc7b0";
